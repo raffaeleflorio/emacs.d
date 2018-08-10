@@ -17,7 +17,7 @@
 (menu-bar-mode -1)
 (scroll-bar-mode -1)
 (add-to-list 'default-frame-alist
-	     '(font . "Inconsolata-11:style=Medium"))
+             '(font . "Inconsolata-11:style=Medium"))
 
 ;; keybinding region
 (global-set-key "\C-x\C-b" 'ibuffer)
@@ -37,7 +37,7 @@
 (setq confirm-nonexistent-file-or-buffer nil
       ido-create-new-buffer 'always
       kill-buffer-query-functions (remq 'process-kill-buffer-query-function
-					kill-buffer-query-functions))
+                                        kill-buffer-query-functions))
 
 ;; startup screen region
 (setq inhibit-startup-message t
