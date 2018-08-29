@@ -11,6 +11,7 @@
 
 ;; load region
 (load "magit-autoloads")
+(load "smex")
 
 ;; ui / ux region
 (tool-bar-mode -1)
@@ -23,6 +24,8 @@
 (global-set-key (kbd "C-x C-b") 'ibuffer)
 (global-set-key (kbd "C-x g") 'magit-status)
 (global-set-key (kbd "M-o") 'other-window)
+(global-set-key (kbd "M-x") 'smex)
+(global-set-key (kbd "M-X") 'smex-major-mode-commands)
 
 ;; ido region
 (setq ido-enable-flex-matching t
