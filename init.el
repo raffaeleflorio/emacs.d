@@ -20,8 +20,9 @@
              '(font . "Inconsolata-11:style=Medium"))
 
 ;; keybinding region
-(global-set-key "\C-x\C-b" 'ibuffer)
-(global-set-key "\C-xg" 'magit-status)
+(global-set-key (kbd "C-x C-b") 'ibuffer)
+(global-set-key (kbd "C-x g") 'magit-status)
+(global-set-key (kbd "M-o") 'other-window)
 
 ;; ido region
 (setq ido-enable-flex-matching t
