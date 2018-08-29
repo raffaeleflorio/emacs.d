@@ -9,9 +9,13 @@
           (add-to-list 'load-path (concat repo "/lisp"))
         (add-to-list 'load-path repo))))
 
-;; load region
+;; require and load region
 (load "magit-autoloads")
-(load "smex")
+(require 'avy)
+(require 'smex)
+(require 'ivy)
+(require 'swiper)
+(require 'counsel)
 
 ;; ui / ux region
 (tool-bar-mode -1)
@@ -23,14 +27,16 @@
 ;; keybinding region
 (global-set-key (kbd "C-x C-b") 'ibuffer)
 (global-set-key (kbd "C-x g") 'magit-status)
+(global-set-key (kbd "C-:") 'avy-goto-char)
+(global-set-key (kbd "M-:") 'avy-goto-word-1)
+(global-set-key (kbd "C-'") 'ivy-avy)
 (global-set-key (kbd "M-o") 'other-window)
-(global-set-key (kbd "M-x") 'smex)
+(global-set-key (kbd "M-x") 'counsel-M-x)
 (global-set-key (kbd "M-X") 'smex-major-mode-commands)
+(global-set-key (kbd "C-s") 'swiper)
 
-;; ido region
-(setq ido-enable-flex-matching t
-      ido-everywhere t)
-(ido-mode 1)
+;; ivy region
+(ivy-mode 1)
 
 ;; dired region
 (setq dired-recursive-deletes 'always
