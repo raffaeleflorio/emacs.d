@@ -22,3 +22,12 @@
 [submodule "site-lisp/swiper"]
 	path = site-lisp/swiper
 	url = https://github.com/abo-abo/swiper.git
+[submodule "site-lisp/hardcore-mode.el"]
+	path = site-lisp/hardcore-mode.el
+	url = https://github.com/magnars/hardcore-mode.el.git
+[submodule "site-lisp/expand-region.el"]
+	path = site-lisp/expand-region.el
+	url = https://github.com/magnars/expand-region.el.git
+[submodule "site-lisp/smart-forward.el"]
+	path = site-lisp/smart-forward.el
+	url = https://github.com/magnars/smart-forward.el.git

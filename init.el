@@ -16,6 +16,7 @@
 (require 'ivy)
 (require 'swiper)
 (require 'counsel)
+(require 'expand-region)
 
 ;; ui / ux region
 (tool-bar-mode -1)
@@ -34,6 +35,7 @@
 (global-set-key (kbd "M-x") 'counsel-M-x)
 (global-set-key (kbd "M-X") 'smex-major-mode-commands)
 (global-set-key (kbd "C-s") 'swiper)
+(global-set-key (kbd "M-ò") 'er/expand-region)
 
 ;; ivy region
 (ivy-mode 1)
@@ -63,6 +65,8 @@
 ;; js-mode region
 (defun my-js-mode-hook ()
   (base-programming-hook)
+  (setq show-paren-delay 0)
+  (show-paren-mode)
   (setq js-indent-level 4))
 
 (add-hook 'js-mode-hook 'my-js-mode-hook)
