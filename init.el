@@ -60,13 +60,14 @@
 (defun base-programming-hook ()
   (linum-mode 1)
   (hl-line-mode 1)
-  (setq-default indent-tabs-mode nil))
+  (column-number-mode)
+  (show-paren-mode)
+  (setq show-paren-delay 0
+        indent-tabs-mode nil))
 
 ;; js-mode region
 (defun my-js-mode-hook ()
   (base-programming-hook)
-  (setq show-paren-delay 0)
-  (show-paren-mode)
   (setq js-indent-level 4))
 
 (add-hook 'js-mode-hook 'my-js-mode-hook)
@@ -83,3 +84,13 @@
   (setq sh-basic-offset 8))
 
 (add-hook 'sh-mode-hook 'my-sh-mode-hook)
+
+;; c-mode region
+(defun my-c-mode-hook ()
+  (base-programming-hook)
+  (setq c-basic-offset 8
+        c-default-style '((java-mode . "java")
+                          (awk-mode . "awk")
+                          (other . "linux"))))
+
+(add-hook 'c-mode-hook 'my-c-mode-hook)
