@@ -5,9 +5,9 @@
 (add-to-list 'load-path site-lisp-dir)
 (dolist (repo (directory-files site-lisp-dir t "^\\w"))
   (if (file-directory-p repo)
-      (if (equal repo (concat site-lisp-dir "/magit"))
-          (add-to-list 'load-path (concat repo "/lisp"))
-        (add-to-list 'load-path repo))))
+      (add-to-list 'load-path (cond ((equal repo (concat site-lisp-dir "/magit")) (concat repo "/lisp"))
+                                    ((equal repo (concat site-lisp-dir "/geiser")) (concat repo "/elisp"))
+                                    (t repo)))))
 
 ;; require and load region
 (load "magit-autoloads")
@@ -17,6 +17,7 @@
 (require 'swiper)
 (require 'counsel)
 (require 'expand-region)
+(require 'geiser)
 
 ;; ui / ux region
 (tool-bar-mode -1)
@@ -39,6 +40,12 @@
 
 ;; ivy region
 (ivy-mode 1)
+
+;; geiser region
+(make-directory (concat user-emacs-directory "geiser"))
+(setq geiser-repl-history-filename (concat user-emacs-directory "geiser/history")
+      geiser-guile-binary "guile2.2"
+      geiser-active-implementations '(guile))
 
 ;; dired region
 (setq dired-recursive-deletes 'always

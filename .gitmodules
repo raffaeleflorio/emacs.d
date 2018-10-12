@@ -31,3 +31,6 @@
 [submodule "site-lisp/smart-forward.el"]
 	path = site-lisp/smart-forward.el
 	url = https://github.com/magnars/smart-forward.el.git
+[submodule "site-lisp/geiser"]
+	path = site-lisp/geiser
+	url = https://git.sv.gnu.org/r/geiser.git
