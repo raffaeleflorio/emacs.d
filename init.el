@@ -42,7 +42,8 @@
 (ivy-mode 1)
 
 ;; geiser region
-(make-directory (concat user-emacs-directory "geiser"))
+(if (not (file-exists-p (concat user-emacs-directory "geiser")))
+    (make-directory (concat user-emacs-directory "geiser")))
 (setq geiser-repl-history-filename (concat user-emacs-directory "geiser/history")
       geiser-guile-binary "guile2.2"
       geiser-active-implementations '(guile))
