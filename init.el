@@ -47,6 +47,8 @@
 (if (not (file-exists-p (concat user-emacs-directory "geiser")))
     (make-directory (concat user-emacs-directory "geiser")))
 (setq geiser-repl-history-filename (concat user-emacs-directory "geiser/history")
+      geiser-repl-query-on-kill-p nil
+      gesier-repl-skip-version-check-p t
       geiser-guile-binary "guile2.2"
       geiser-active-implementations '(guile))
 
