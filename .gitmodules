@@ -34,3 +34,12 @@
 [submodule "site-lisp/geiser"]
 	path = site-lisp/geiser
 	url = https://git.sv.gnu.org/r/geiser.git
+[submodule "site-lisp/iedit"]
+	path = site-lisp/iedit
+	url = https://github.com/victorhge/iedit.git
+[submodule "site-lisp/hydra"]
+	path = site-lisp/hydra
+	url = https://github.com/abo-abo/hydra.git
+[submodule "site-lisp/lispy"]
+	path = site-lisp/lispy
+	url = https://github.com/abo-abo/lispy.git
