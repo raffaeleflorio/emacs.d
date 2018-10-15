@@ -18,6 +18,7 @@
 (require 'counsel)
 (require 'expand-region)
 (require 'geiser)
+(require 'lispy)
 
 ;; ui / ux region
 (tool-bar-mode -1)
@@ -32,6 +33,7 @@
 (global-set-key (kbd "C-:") 'avy-goto-char)
 (global-set-key (kbd "M-:") 'avy-goto-word-1)
 (global-set-key (kbd "C-'") 'ivy-avy)
+(define-key lispy-mode-map-lispy (kbd "M-o") nil)
 (global-set-key (kbd "M-o") 'other-window)
 (global-set-key (kbd "M-x") 'counsel-M-x)
 (global-set-key (kbd "M-X") 'smex-major-mode-commands)
@@ -82,9 +84,17 @@
 
 ;; emacs-lisp-mode region
 (defun my-emacs-lisp-mode-hook ()
-  (base-programming-hook))
+  (base-programming-hook)
+  (lispy-mode 1))
 
 (add-hook 'emacs-lisp-mode-hook 'my-emacs-lisp-mode-hook)
+
+;; scheme-mode region
+(defun my-scheme-mode-hook ()
+  (base-programming-hook)
+  (lispy-mode 1))
+
+(add-hook 'scheme-mode-hook 'my-scheme-mode-hook)
 
 ;; sh-mode region
 (defun my-sh-mode-hook ()
