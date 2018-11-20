@@ -46,3 +46,6 @@
 [submodule "site-lisp/graphql"]
 	path = site-lisp/graphql
 	url = https://github.com/vermiculus/graphql.el.git
+[submodule "site-lisp/iedit"]
+	path = site-lisp/iedit
+	url = https://github.com/victorhge/iedit.git
